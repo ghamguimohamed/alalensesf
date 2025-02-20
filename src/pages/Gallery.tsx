@@ -25,7 +25,7 @@ interface GalleryImage {
 const images: GalleryImage[] = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    url: 'https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/public/yu//Black%20and%20Grey%20Elegant%20Minimalist%20Meet%20Our%20Team%20Instagram%20Story.jpg',
     category: 'landscapes',
     alt: 'Mountain peaks in the mist',
     metadata: {

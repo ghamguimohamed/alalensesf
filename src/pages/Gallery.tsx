@@ -22,8 +22,21 @@ interface GalleryImage {
   metadata: ImageMetadata;
 }
 
-const images: GalleryImage[] = [
-  {
+const categories = [
+  { id: 'all', label: 'All' },
+  { id: 'landscapes', label: 'Landscapes' },
+  { id: 'morocco', label: 'Morocco' },
+  { id: 'animals', label: 'Animals' },
+  { id: 'sports', label: 'Sports' },
+  { id: 'art', label: 'Art' }
+];
+
+const Gallery: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+
+  const images: GalleryImage[] = [
+   {
     id: 1,
     url: 'https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-005236.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDA1MjM2LnBuZyIsImlhdCI6MTc0MDEwNDAzNiwiZXhwIjo0ODkzNzA0MDM2fQ.FP-j2-e0oMa743-g3xZ8WarrHKV5V8IIDT7dFgozQDU',
     category: 'art',
@@ -579,14 +592,6 @@ const images: GalleryImage[] = [
   }
 ];
 
-const categories = [
-  { id: 'all', label: 'All' },
-  { id: 'landscapes', label: 'Landscapes' },
-  { id: 'morocco', label: 'Morocco' },
-  { id: 'animals', label: 'Animals' },
-  { id: 'sports', label: 'Sports' },
-  { id: 'art', label: 'Art' }
-];
 
   const filteredImages = selectedCategory === 'all' 
     ? images 
@@ -655,83 +660,6 @@ const categories = [
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Image Modal */}
-        {selectedImage && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div 
-              className="max-w-7xl w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden"
-              onClick={e => e.stopPropagation()}
-            >
-              <div className="relative">
-                <img
-                  src={selectedImage.url}
-                  alt={selectedImage.alt}
-                  className="w-full max-h-[70vh] object-contain"
-                />
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  {selectedImage.alt}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <Camera className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
-                          Camera Settings
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                          {selectedImage.metadata.camera} with {selectedImage.metadata.lens}
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                          {selectedImage.metadata.aperture} • {selectedImage.metadata.shutterSpeed}s • ISO {selectedImage.metadata.iso}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <Map className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
-                          Location
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                          {selectedImage.metadata.location}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                      <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
-                          Date Taken
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                          {formatDate(selectedImage.metadata.date)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -351,21 +351,6 @@ const Gallery: React.FC = () => {
     }
   },
    {
-    id: 22,
-    url: 'https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/public/yu//Black%20and%20Grey%20Elegant%20Minimalist%20Meet%20Our%20Team%20Instagram%20Story.jpg',
-    category: 'animals',
-    alt: '',
-    metadata: {
-      camera: 'Canon EOS 250D',
-      lens: 'f/5.6',
-      aperture: 'f/5.6',
-      shutterSpeed: '1/200',
-      iso: '200',
-      location: 'Morocco',
-      date: '2024-08-08'
-    }
-  },
-   {
     id: 23,
     url: 'https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-010528.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDEwNTI4LnBuZyIsImlhdCI6MTc0MDEwNTU2NCwiZXhwIjo2NDQ1MDE3NTY0fQ.DZXoBSQLPNSPMekobjhZPAr25HJo8JV6y6sYn6GzkCg',
     category: 'landscapes',

@@ -58,7 +58,7 @@ const Gallery: React.FC = () => {
     alt: 'Moroccan street market',
     metadata: {
       camera: 'alalenses',
-      lens: 'Semblant d'écrivaine',
+      lens: 'Semblant decrivaine',
       aperture: '_',
       shutterSpeed: '_',
       iso: '',

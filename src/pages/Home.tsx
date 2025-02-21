@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // Import navigation
 
 const Home: React.FC = () => {
+  const navigate = useNavigate(); // Initialize navigation
+
   return (
     <div className="min-h-screen">
       <div 
@@ -23,6 +26,7 @@ const Home: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/gallery')} // Navigate on click
                 className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all"
               >
                 Explore Gallery
@@ -38,17 +42,17 @@ const Home: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Work</h2>
             <p className="text-gray-600 dark:text-gray-300">
               Explore my photography projects spanning across various themes and locations.
-              Each image has it's story.
+              Each image has its story.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img 
-              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011333.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDExMzMzLnBuZyIsImlhdCI6MTc0MDEwNTgzOCwiZXhwIjo5MzMwMDAwMjM4fQ.rFC3Krgw050GD_7kw5zt5MiEIei2T7jAVg8Iz6LZExw"
+              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011333.png"
               alt="Mountain landscape"
               className="rounded-lg object-cover w-full h-48"
             />
             <img 
-              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011209.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDExMjA5LnBuZyIsImlhdCI6MTc0MDEwNzMxOSwiZXhwIjo2MjUzOTg4OTE5fQ.owTdKgXjY0fvZaDj0ZMmXJifdJGQir7x8ToMpvlQQiM"
+              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011209.png"
               alt="Landscape"
               className="rounded-lg object-cover w-full h-48"
             />

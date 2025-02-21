@@ -9,12 +9,15 @@ const Contact: React.FC = () => {
     message: ''
   });
 
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
+    alert('Message Sent Successfully!');
+    setFormData({ name: '', email: '', message: '' }); // Clear form after submission
   };
 
+  // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -36,6 +39,7 @@ const Contact: React.FC = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Contact Information Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -54,7 +58,7 @@ const Contact: React.FC = () => {
               <Phone className="w-6 h-6 text-gray-900 dark:text-white" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Phone</h3>
-                <p className="text-gray-600 dark:text-gray-300"></p>
+                <p className="text-gray-600 dark:text-gray-300">+212 600-000-000</p>
               </div>
             </div>
 
@@ -74,12 +78,14 @@ const Contact: React.FC = () => {
             </div>
           </motion.div>
 
+          {/* Contact Form Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Name
@@ -95,6 +101,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
+              {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Email
@@ -110,6 +117,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
+              {/* Message Field */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Message
@@ -125,6 +133,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200"

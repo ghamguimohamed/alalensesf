@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
     alt: 'cit1',
     metadata: {
       camera: 'alalenses',
-      lens: 'Semblant d'écrivaine',
+      lens: 'Semblant dEcrivaine',
       aperture: '_',
       shutterSpeed: '_',
       iso: '',

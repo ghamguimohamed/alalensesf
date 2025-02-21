@@ -43,13 +43,13 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img 
-              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011333.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDExMzMzLnBuZyIsImlhdCI6MTc0MDEwNTgzOCwiZXhwIjo5MzMwMDAwMjM4fQ.rFC3Krgw050GD_7kw5zt5MiEIei2T7jAVg8Iz6LZExw"
               alt="Mountain landscape"
               className="rounded-lg object-cover w-full h-48"
             />
             <img 
-              src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              alt="Desert landscape"
+              src="https://vmawxhpkyeqskpzzvaiz.supabase.co/storage/v1/object/sign/gallery/gallery/capture-d-ecran-2025-02-21-011209.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnYWxsZXJ5L2dhbGxlcnkvY2FwdHVyZS1kLWVjcmFuLTIwMjUtMDItMjEtMDExMjA5LnBuZyIsImlhdCI6MTc0MDEwNzMxOSwiZXhwIjo2MjUzOTg4OTE5fQ.owTdKgXjY0fvZaDj0ZMmXJifdJGQir7x8ToMpvlQQiM"
+              alt="Landscape"
               className="rounded-lg object-cover w-full h-48"
             />
           </div>
